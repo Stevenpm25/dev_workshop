@@ -1,5 +1,6 @@
 import pytest
-from src.strings.strings import Strings
+from src.string.strings import Strings
+
 
 class TestStrings:
     def setup_method(self):
