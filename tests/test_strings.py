@@ -98,4 +98,4 @@ class TestStrings:
         assert self.strings.es_numero_entero("-456") == True
         # Test con números no enteros
         assert self.strings.es_numero_entero("12.34") == False
-assert self.strings.es_numero_entero("abc") == False
+assert TestStrings().strings.es_numero_entero("abc") == False
