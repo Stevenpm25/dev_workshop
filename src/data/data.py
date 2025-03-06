@@ -76,3 +76,9 @@ class Data:
 
     def matriz_transpuesta(self, matriz):
         return [list(fila) for fila in zip(*matriz)] if matriz else []
+    
+    def encuentra_numero_faltante(self, numeros):
+        n = len(numeros) + 1
+        suma_esperada = n * (n + 1) // 2
+        suma_actual = sum(numeros)
+        return suma_esperada - suma_actual
