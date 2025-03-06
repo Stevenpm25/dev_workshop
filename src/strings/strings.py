@@ -1,3 +1,4 @@
+import re
 class Strings:
     """
     Clase con métodos para manipulación y operaciones con cadenas de texto.
@@ -53,7 +54,7 @@ class Strings:
         return texto.title()
 
     def eliminar_espacios_duplicados(self, texto):
-        return " ".join(texto.split())
+     return re.sub(r'(\S) +(\S)', r'\1 \2', texto)
 
     def es_numero_entero(self, cadena):
         """
