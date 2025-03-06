@@ -7,6 +7,7 @@ class Data:
     Incluye implementaciones y algoritmos para arreglos, listas y otras estructuras.
     """
     
+    
     def invertir_lista(self, lista):
         return lista[::-1]
 
@@ -36,44 +37,37 @@ class Data:
     def es_subconjunto(self, conjunto1, conjunto2):
         return set(conjunto1).issubset(set(conjunto2))
 
+    def encuentra_numero_faltante(self, numeros):
+        n = len(numeros) + 1
+        suma_esperada = n * (n + 1) // 2
+        suma_actual = sum(numeros)
+        return suma_esperada - suma_actual
+
+    class Pila:
+        def __init__(self):
+            self.items = []
+        def push(self, item):
+            self.items.append(item)
+        def pop(self):
+            return self.items.pop() if not self.is_empty() else None
+        def is_empty(self):
+            return len(self.items) == 0
+
+    class Cola:
+        def __init__(self):
+            self.items = []
+        def enqueue(self, item):
+            self.items.append(item)
+        def dequeue(self):
+            return self.items.pop(0) if not self.is_empty() else None
+        def is_empty(self):
+            return len(self.items) == 0
+
     def implementar_pila(self):
-        class Pila:
-            def __init__(self):
-                self.items = []
-
-            def push(self, item):
-                self.items.append(item)
-
-            def pop(self):
-                return self.items.pop() if self.items else None
-
-            def is_empty(self):
-                return not self.items
-        
-            def size(self):
-                return len(self.items)
-        
-        return Pila()
+        return self.Pila()
 
     def implementar_cola(self):
-        class Cola:
-            def __init__(self):
-                self.items = collections.deque()
-
-            def enqueue(self, item):
-                self.items.append(item)
-
-            def dequeue(self):
-                return self.items.popleft() if self.items else None
-
-            def is_empty(self):
-                return not self.items
-        
-            def size(self):
-                return len(self.items)
-        
-        return Cola()
-
+        return self.Cola()
     def matriz_transpuesta(self, matriz):
         return [list(fila) for fila in zip(*matriz)] if matriz else []
     
