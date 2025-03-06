@@ -28,12 +28,9 @@ class Strings:
         vocales = "aeiouAEIOU"
         return sum(1 for char in texto if char in vocales)
     
-    def contar_consonantes(self, texto):
-        """
-        Cuenta el número de consonantes en una cadena.
-        """
-        consonantes = "bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ"
-        return sum(1 for char in texto if char in consonantes)
+    def contar_consonantes(self, cadena):
+        consonantes = set("bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ")
+        return sum(1 for c in cadena if c in consonantes)
     
     def es_anagrama(self, texto1, texto2):
         """
@@ -57,20 +54,11 @@ class Strings:
         return ' '.join(palabra.capitalize() for palabra in texto.split(' '))
 
     def eliminar_espacios_duplicados(self, texto):
-        """
-        Elimina espacios duplicados en una cadena.
-        """
-        return ' '.join(texto.split())
+        return " ".join(texto.split())
+    
 
-    def es_numero_entero(self, texto):
-        """
-        Verifica si una cadena representa un número entero sin usar isdigit().
-        """
-        try:
-            int(texto)
-            return True
-        except ValueError:
-            return False
+    def es_numero_entero(self, cadena):
+        return cadena.lstrip("-+").isdigit()
 
     def cifrar_cesar(self, texto, desplazamiento):
         """
