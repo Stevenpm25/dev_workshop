@@ -191,7 +191,7 @@ class TestGeometria:
         # Test con valores negativos
         assert self.geometria.ecuacion_recta(-1, -2, 2, 4) == (2.0, -1, -0.0)
         # Test con línea horizontal
-        assert self.geometria.ecuacion_recta(1, 5, 5, 5) == (0, 1, -5)
+        assert self.geometria.ecuacion_recta(1, 5, 5, 5) == (0.0, -1, 5.0)
     
     def test_area_poligono_regular(self):
         # Test con triángulo regular
