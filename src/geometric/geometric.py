@@ -75,7 +75,16 @@ class Geometria:
      A = y2 - y1
      B = -(x2 - x1)
      C = x2 * y1 - x1 * y2
-     return (A, B, C)
+
+     
+     if A != 0:
+        factor = A
+        A /= factor
+        B /= factor
+        C /= factor
+
+     return (round(A, 2), round(B, 2), round(C, 2))
+
 
     
     def area_poligono_regular(self, lados, longitud, apotema):
