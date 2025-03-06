@@ -1,3 +1,5 @@
+import collections
+from collections import deque
 class Data:
     """
     Clase con métodos para operaciones y manipulaciones de estructuras de datos.
