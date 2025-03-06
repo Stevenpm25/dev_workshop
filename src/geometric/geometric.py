@@ -58,7 +58,7 @@ class Geometria:
     
     
     def area_superficie_cilindro(self, radio, altura):
-        return round(2 * math.pi * radio * (radio + altura), 2
+        return round(2 * math.pi * radio * (radio + altura), 2)
     
     def distancia_entre_puntos(self, x1, y1, x2, y2):
         return round(math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2), 2)
