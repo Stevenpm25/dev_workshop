@@ -44,24 +44,46 @@ class Data:
         return suma_esperada - suma_actual
 
     class Pila:
-        def __init__(self):
-            self.items = []
-        def push(self, item):
-            self.items.append(item)
-        def pop(self):
-            return self.items.pop() if not self.is_empty() else None
-        def is_empty(self):
-            return len(self.items) == 0
+     def __init__(self):
+        self.items = []
+
+    def is_empty(self):
+        return len(self.items) == 0
+
+    def push(self, item):
+        self.items.append(item)
+
+    def pop(self):
+        if not self.is_empty():
+            return self.items.pop()
+        return None
+
+    def peek(self):  # <--- Agregado
+        if not self.is_empty():
+            return self.items[-1]
+        return None
+
 
     class Cola:
-        def __init__(self):
-            self.items = []
-        def enqueue(self, item):
-            self.items.append(item)
-        def dequeue(self):
-            return self.items.pop(0) if not self.is_empty() else None
-        def is_empty(self):
-            return len(self.items) == 0
+     def __init__(self):
+        self.items = []
+
+     def is_empty(self):
+        return len(self.items) == 0
+
+     def enqueue(self, item):
+        self.items.append(item)
+
+     def dequeue(self):
+        if not self.is_empty():
+            return self.items.pop(0)
+        return None
+
+     def peek(self):  # <--- Agregado
+        if not self.is_empty():
+            return self.items[0]
+        return None
+
 
     def implementar_pila(self):
         return self.Pila()
