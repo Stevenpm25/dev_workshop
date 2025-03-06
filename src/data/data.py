@@ -11,7 +11,14 @@ class Data:
         return lista.index(elemento) if elemento in lista else -1
 
     def eliminar_duplicados(self, lista):
-        return list(dict.fromkeys(lista))
+        # Mantener el orden y evitar la conversión de True a 1
+        seen = set()
+        resultado = []
+        for item in lista:
+            if item not in seen or (item is True and True not in seen) or (item is False and False not in seen):
+                seen.add(item)
+                resultado.append(item)
+        return resultado
 
     def merge_ordenado(self, lista1, lista2):
         return sorted(lista1 + lista2)
@@ -34,39 +41,34 @@ class Data:
     def implementar_pila(self):
         class Pila:
             def __init__(self):
-                self.pila = []
-            
-            def push(self, x):
-                self.pila.append(x)
-            
+                self.items = []
+
+            def push(self, item):
+                self.items.append(item)
+
             def pop(self):
-                return self.pila.pop() if self.pila else None
-            
-            def peek(self):
-                return self.pila[-1] if self.pila else None
-            
+                return self.items.pop() if self.items else None
+
             def is_empty(self):
-                return len(self.pila) == 0
-        
+                return not self.items
+
         return Pila()
+
     
     def implementar_cola(self):
         class Cola:
             def __init__(self):
-                self.cola = []
-            
-            def enqueue(self, x):
-                self.cola.append(x)
-            
+                self.items = []
+
+            def enqueue(self, item):
+                self.items.append(item)
+
             def dequeue(self):
-                return self.cola.pop(0) if self.cola else None
-            
-            def peek(self):
-                return self.cola[0] if self.cola else None
-            
+                return self.items.pop(0) if self.items else None
+
             def is_empty(self):
-                return len(self.cola) == 0
-        
+                return not self.items
+
         return Cola()
 
     def matriz_transpuesta(self, matriz):
