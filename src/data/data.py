@@ -33,12 +33,6 @@ class Data:
         k = k % len(lista)
         return lista[-k:] + lista[:-k]
 
-    def encuentra_numero_faltante(self, lista):
-        n = len(lista) + 1
-        suma_total = n * (n - 1) // 2  # Fórmula correcta para la suma esperada
-        suma_lista = sum(lista)
-        return suma_total - suma_lista
-
     def es_subconjunto(self, conjunto1, conjunto2):
         return set(conjunto1).issubset(set(conjunto2))
 
