@@ -72,9 +72,11 @@ class Geometria:
         return (y2 - y1) / (x2 - x1)
     
     def ecuacion_recta(self, x1, y1, x2, y2):
-        m = (y2 - y1) / (x2 - x1)
-        b = y1 - m * x1
-        return (round(m, 2), round(-1, 2), round(b, 2))
+     A = y2 - y1
+     B = -(x2 - x1)
+     C = x2 * y1 - x1 * y2
+     return (A, B, C)
+
     
     def area_poligono_regular(self, lados, longitud, apotema):
         return (lados * longitud * apotema) / 2
