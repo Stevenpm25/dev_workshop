@@ -74,6 +74,9 @@ class TestData:
         assert self.data.es_subconjunto([], [1, 2, 3]) == True
     
     def test_implementar_pila(self):
+        def peek(self):
+           return self.items[-1] if self.items else None
+
         pila = self.data.implementar_pila()
         # Test de pila vacía
         assert pila.is_empty() == True
