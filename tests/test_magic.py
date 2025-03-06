@@ -84,7 +84,7 @@ class TestMagic:
         assert self.magic.mcm(4, 6) == 12
         assert self.magic.mcm(15, 25) == 75
         assert self.magic.mcm(7, 13) == 91
-        assert self.magic.mcm(5, 1) == 0
+        assert self.magic.mcm(5, 1) == 5
     
     def test_suma_digitos(self):
         # Test para suma de dígitos
