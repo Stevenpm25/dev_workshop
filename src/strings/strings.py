@@ -3,13 +3,13 @@ class Strings:
     Clase con métodos para manipulación y operaciones con cadenas de texto.
     Incluye funciones para manipular, validar y transformar strings.
     """
-    
+
     def es_palindromo(self, texto):
         """
         Verifica si una cadena es un palíndromo (se lee igual de izquierda a derecha y viceversa).
         Ignora espacios y mayúsculas.
         """
-        texto = texto.lower().replace(" ", "")
+        texto = ''.join(filter(str.isalnum, texto.lower()))  # Elimina espacios y caracteres no alfanuméricos
         return texto == texto[::-1]
 
     def invertir_cadena(self, texto):
@@ -20,44 +20,49 @@ class Strings:
         for char in texto:
             resultado = char + resultado  # Agrega cada letra al inicio
         return resultado
-    
+
     def contar_vocales(self, texto):
         """
         Cuenta el número de vocales en una cadena.
         """
-        vocales = "aeiouAEIOU"
-        return sum(1 for char in texto if char in vocales)
-    
-    def contar_consonantes(self, cadena):
-        consonantes = set("bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ")
-        return sum(1 for c in cadena if c in consonantes)
-    
+        return sum(1 for char in texto.lower() if char in "aeiou")
+
+    def contar_consonantes(self, texto):
+        """
+        Cuenta el número de consonantes en una cadena.
+        """
+        return sum(1 for char in texto.lower() if char.isalpha() and char not in "aeiou")
+
     def es_anagrama(self, texto1, texto2):
         """
         Verifica si dos cadenas son anagramas (contienen exactamente los mismos caracteres).
         """
-        texto1 = texto1.lower().replace(" ", "")
-        texto2 = texto2.lower().replace(" ", "")
-        return sorted(texto1) == sorted(texto2)
-    
+        texto1 = ''.join(sorted(texto1.lower().replace(" ", "")))
+        texto2 = ''.join(sorted(texto2.lower().replace(" ", "")))
+        return texto1 == texto2
+
     def contar_palabras(self, texto):
         """
         Cuenta el número de palabras en una cadena.
         """
-        palabras = texto.split()
-        return len(palabras)
-    
+        return len(texto.split())
+
     def palabras_mayus(self, texto):
         """
         Pone en mayúscula la primera letra de cada palabra en una cadena.
         """
-        return ' '.join(palabra.capitalize() for palabra in texto.split(' '))
+        return texto.title()
 
     def eliminar_espacios_duplicados(self, texto):
+        """
+        Elimina espacios duplicados en un texto, dejando solo un espacio entre palabras.
+        """
         return " ".join(texto.split())
-    
 
     def es_numero_entero(self, cadena):
+        """
+        Verifica si una cadena representa un número entero (positivo o negativo).
+        """
         return cadena.lstrip("-+").isdigit()
 
     def cifrar_cesar(self, texto, desplazamiento):
@@ -70,7 +75,7 @@ class Strings:
                 base = ord('A') if char.isupper() else ord('a')
                 resultado += chr((ord(char) - base + desplazamiento) % 26 + base)
             else:
-                resultado += char  # Mantiene espacios y otros caracteres iguales
+                resultado += char  # Mantiene espacios y otros caracteres sin cambios
         return resultado
 
     def descifrar_cesar(self, texto, desplazamiento):
@@ -88,7 +93,6 @@ class Strings:
             if texto[i:i+len(subcadena)] == subcadena:
                 posiciones.append(i)
         return posiciones
-
 
 
 

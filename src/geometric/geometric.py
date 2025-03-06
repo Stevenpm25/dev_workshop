@@ -1,5 +1,6 @@
 import math
 from math import pi
+
 class Geometria:
     def area_rectangulo(self, base, altura):
         return base * altura
@@ -8,10 +9,10 @@ class Geometria:
         return 2 * (base + altura)
     
     def area_circulo(self, radio):
-        return math.pi * radio ** 2
+        return pi * radio ** 2
     
     def perimetro_circulo(self, radio):
-        return 2 * math.pi * radio
+        return 2 * pi * radio
     
     def area_triangulo(self, base, altura):
         return (base * altura) / 2
@@ -47,16 +48,16 @@ class Geometria:
         return 6 * lado ** 2
     
     def volumen_esfera(self, radio):
-        return (4/3) * math.pi * radio ** 3
+        return (4/3) * pi * radio ** 3
     
     def area_superficie_esfera(self, radio):
-        return 4 * math.pi * radio ** 2
+        return 4 * pi * radio ** 2
     
     def volumen_cilindro(self, radio, altura):
-        return math.pi * radio ** 2 * altura
+        return pi * radio ** 2 * altura
     
     def area_superficie_cilindro(self, radio, altura):
-        return 2 * math.pi * radio * (radio + altura)
+        return 2 * pi * radio * (radio + altura)
     
     def distancia_entre_puntos(self, x1, y1, x2, y2):
         return round(math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2), 2)
@@ -70,13 +71,16 @@ class Geometria:
         return (y2 - y1) / (x2 - x1)
     
     def ecuacion_recta(self, x1, y1, x2, y2):
+        if x1 == x2:
+            raise ValueError("No se puede calcular la ecuación de una línea vertical de la forma x = c")
         m = (y2 - y1) / (x2 - x1)
         b = y1 - m * x1
-        return (m, -1, b)
+        return (round(m, 2), -1, round(b, 2))
     
     def area_poligono_regular(self, n, s, a):
         return (n * s * a) / 2
     
     def perimetro_poligono_regular(self, num_lados, lado):
         return num_lados * lado
+
 
