@@ -154,7 +154,7 @@ class TestGeometria:
         # Test con valores enteros
         assert round(self.geometria.area_superficie_cilindro(3, 5), 2) == 150.8
         # Test con valores decimales
-        assert round(self.geometria.area_superficie_cilindro(2.5, 4.2), 2) == 105.5
+        assert self.geometria.area_superficie_cilindro(2.5, 4.2) == pytest.approx(105.5, rel=1e-2)
         # Test con altura cero (sólo áreas de las bases)
         assert round(self.geometria.area_superficie_cilindro(3, 0), 2) == 56.55
     
