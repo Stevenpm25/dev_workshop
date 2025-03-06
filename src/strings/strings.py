@@ -54,7 +54,12 @@ class Strings:
         return texto.title()
 
     def eliminar_espacios_duplicados(self, texto):
-        return re.sub(r'\s+', ' ', texto).strip()
+        texto_sin_duplicados = re.sub(r'\s+', ' ', texto)  
+        if texto.startswith(" "):  
+            texto_sin_duplicados = " " + texto_sin_duplicados.lstrip()
+        if texto.endswith(" "):  
+            texto_sin_duplicados = texto_sin_duplicados.rstrip() + " "
+        return texto_sin_duplicados
 
     def es_numero_entero(self, cadena):
         """
