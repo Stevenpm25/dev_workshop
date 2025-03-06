@@ -85,7 +85,7 @@ class TestData:
         # Test de pop
         assert pila["pop"]() == 2
         assert pila["pop"]() == 1
-        assert pila["is_empty"]() == True
+        assert pila.is_empty() == True
     
     def test_implementar_cola(self):
         cola = self.data.implementar_cola()
@@ -99,7 +99,7 @@ class TestData:
         # Test de dequeue
         assert cola["dequeue"]() == 1
         assert cola["dequeue"]() == 2
-        assert cola["is_empty"]() == True
+        assert cola.is_empty() == True
     
     def test_matriz_transpuesta(self):
         # Test con matriz 2x3
