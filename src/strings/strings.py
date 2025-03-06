@@ -28,10 +28,9 @@ class Strings:
         return sum(1 for char in texto.lower() if char in "aeiou")
 
     def contar_consonantes(self, texto):
-        """
-        Cuenta el número de consonantes en una cadena.
-        """
-        return sum(1 for char in texto.lower() if char.isalpha() and char not in "aeiou")
+        texto = texto.lower()
+        vocales = "aeiou"
+        return sum(1 for letra in texto if letra.isalpha() and letra not in vocales)
 
     def es_anagrama(self, texto1, texto2):
         """
@@ -54,9 +53,6 @@ class Strings:
         return texto.title()
 
     def eliminar_espacios_duplicados(self, texto):
-        """
-        Elimina espacios duplicados en un texto, dejando solo un espacio entre palabras.
-        """
         return " ".join(texto.split())
 
     def es_numero_entero(self, cadena):

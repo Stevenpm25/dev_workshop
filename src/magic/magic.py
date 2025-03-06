@@ -67,7 +67,6 @@ class Magic:
         return math.gcd(a, b)
 
     def mcm(self, a, b):
-        """Calcula el mínimo común múltiplo (MCM) de dos números."""
         if a == 0 or b == 0:
             return 0
         return abs(a * b) // math.gcd(a, b)
