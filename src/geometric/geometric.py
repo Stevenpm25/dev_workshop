@@ -1,5 +1,5 @@
 import math
-
+from math import pi
 class Geometria:
     def area_rectangulo(self, base, altura):
         return base * altura
@@ -70,12 +70,12 @@ class Geometria:
         return (y2 - y1) / (x2 - x1)
     
     def ecuacion_recta(self, x1, y1, x2, y2):
-        m = self.pendiente_recta(x1, y1, x2, y2)
+        m = (y2 - y1) / (x2 - x1)
         b = y1 - m * x1
         return (m, -1, b)
     
-    def area_poligono_regular(self, num_lados, lado, apotema):
-        return (num_lados * lado * apotema) / 2
+    def area_poligono_regular(self, n, s, a):
+        return (n * s * a) / 2
     
     def perimetro_poligono_regular(self, num_lados, lado):
         return num_lados * lado
