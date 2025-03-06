@@ -76,30 +76,30 @@ class TestData:
     def test_implementar_pila(self):
         pila = self.data.implementar_pila()
         # Test de pila vacía
-        assert pila["is_empty"]() == True
+        assert pila.is_empty() == True
         # Test de push y peek
-        pila["push"](1)
-        assert pila["peek"]() == 1
-        pila["push"](2)
-        assert pila["peek"]() == 2
+        pila.push(1)
+        assert pila.peek() == 1
+        pila.push(2)
+        assert pila.peek() == 2
         # Test de pop
-        assert pila["pop"]() == 2
-        assert pila["pop"]() == 1
-        assert pila["is_empty"]() == True
+        assert pila.pop() == 2
+        assert pila.pop() == 1
+        assert pila.is_empty() == True
     
     def test_implementar_cola(self):
         cola = self.data.implementar_cola()
         # Test de cola vacía
-        assert cola["is_empty"]() == True
-        # Test de enqueue y peek
-        cola["enqueue"](1)
-        assert cola["peek"]() == 1
-        cola["enqueue"](2)
-        assert cola["peek"]() == 1
+        assert cola.is_empty() == True
+    # Test de enqueue y peek
+        cola.enqueue(1)
+        assert cola.peek() == 1
+        cola.enqueue(2)
+        assert cola.peek() == 1
         # Test de dequeue
-        assert cola["dequeue"]() == 1
-        assert cola["dequeue"]() == 2
-        assert cola["is_empty"]() == True
+        assert cola.dequeue() == 1
+        assert cola.dequeue() == 2
+        assert cola.is_empty() == True
     
     def test_matriz_transpuesta(self):
         # Test con matriz 2x3
