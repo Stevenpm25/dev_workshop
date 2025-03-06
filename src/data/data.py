@@ -1,5 +1,6 @@
 import collections
 from collections import deque
+
 class Data:
     """
     Clase con métodos para operaciones y manipulaciones de estructuras de datos.
@@ -17,8 +18,9 @@ class Data:
         seen = set()
         resultado = []
         for item in lista:
-            if item not in seen or (item is True and True not in seen) or (item is False and False not in seen):
-                seen.add(item)
+            clave = (type(item), item)  # Diferenciar por tipo y valor
+            if clave not in seen:
+                seen.add(clave)
                 resultado.append(item)
         return resultado
 
@@ -33,7 +35,7 @@ class Data:
 
     def encuentra_numero_faltante(self, lista):
         n = len(lista) + 1
-        suma_total = n * (n + 1) // 2
+        suma_total = n * (n - 1) // 2  # Fórmula correcta para la suma esperada
         suma_lista = sum(lista)
         return suma_total - suma_lista
 
@@ -53,26 +55,30 @@ class Data:
 
             def is_empty(self):
                 return not self.items
-
+        
+            def size(self):
+                return len(self.items)
+        
         return Pila()
 
-    
     def implementar_cola(self):
         class Cola:
             def __init__(self):
-                self.items = []
+                self.items = collections.deque()
 
             def enqueue(self, item):
                 self.items.append(item)
 
             def dequeue(self):
-                return self.items.pop(0) if self.items else None
+                return self.items.popleft() if self.items else None
 
             def is_empty(self):
                 return not self.items
-
+        
+            def size(self):
+                return len(self.items)
+        
         return Cola()
 
     def matriz_transpuesta(self, matriz):
         return [list(fila) for fila in zip(*matriz)] if matriz else []
-
