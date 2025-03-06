@@ -71,19 +71,13 @@ class Geometria:
             raise ZeroDivisionError("La pendiente es infinita (línea vertical)")
         return (y2 - y1) / (x2 - x1)
     
-    def ecuacion_recta(self, x1, y1, x2, y2):
-     A = y2 - y1
-     B = -(x2 - x1)
-     C = x2 * y1 - x1 * y2
+    def ecuacion_recta(x1, y1, x2, y2):
+     if x1 == x2:
+        raise ValueError("La recta es vertical, no tiene pendiente definida.")
+     m = (y2 - y1) / (x2 - x1) 
+     b = y1 - m * x1  
+     return (m, -1, b)  
 
-     
-     if A != 0:
-        factor = A
-        A /= factor
-        B /= factor
-        C /= factor
-
-     return (round(A, 2), round(B, 2), round(C, 2))
 
 
     

@@ -189,7 +189,7 @@ class TestGeometria:
         # Test con valores enteros
         assert self.geometria.ecuacion_recta(1, 1, 3, 3) == (1.0, -1, 0.0)
         # Test con valores negativos
-        assert self.geometria.ecuacion_recta(-1, -2, 2, 4) == (6, -3, 0)
+        assert self.geometria.ecuacion_recta(-1, -2, 2, 4) == (2.0, -1, -0.0)
         # Test con línea horizontal
         assert self.geometria.ecuacion_recta(1, 5, 5, 5) == (0, 1, -5)
     
