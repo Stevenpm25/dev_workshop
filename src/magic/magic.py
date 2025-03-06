@@ -53,7 +53,8 @@ class Magic:
         return a
 
     def mcm(self, a, b):
-        return abs(a * b) // self.mcd(a, b) if a and b else 0
+        from math import gcd
+        return abs(a * b) // gcd(a, b)
 
     def suma_digitos(self, n):
         return sum(int(d) for d in str(abs(n)))
