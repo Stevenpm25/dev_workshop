@@ -1,6 +1,5 @@
 import pytest
-from src.string.strings import Strings
-
+from src.strings.strings import Strings
 
 class TestStrings:
     def setup_method(self):
@@ -97,5 +96,6 @@ class TestStrings:
         assert self.strings.es_numero_entero("-456") == True
         # Test con números no enteros
         assert self.strings.es_numero_entero("12.34") == False
+        assert self.strings.es_numero_ent
         
 
