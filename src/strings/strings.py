@@ -63,7 +63,7 @@ class Strings:
 
     def es_numero_entero(self, cadena):
         """
-        Verifica si una cadena representa un número entero (positivo o negativo).
+        Verifica si una cadena representa un número entero (positivo o negativo..).
         """
         return cadena.lstrip("-+").isdigit()
 
