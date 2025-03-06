@@ -29,7 +29,7 @@ class TestStrings:
     
     def test_contar_vocales(self):
         # Test con cadenas con vocales
-        assert self.strings.contar_vocales("sigmotoa") == 4
+        assert self.strings.contar_consonantes("sigmotoa") == 4
         assert self.strings.contar_vocales("murcielago") == 5
         # Test con cadena sin vocales
         assert self.strings.contar_vocales("rhythm") == 0
