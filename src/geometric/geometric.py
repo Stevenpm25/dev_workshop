@@ -57,7 +57,7 @@ class Geometria:
         return pi * radio ** 2 * altura
     
     def area_superficie_cilindro(self, radio, altura):
-        return 2 * pi * radio * (radio + altura)
+        return round(2 * self.math.pi * radio * (radio + altura), 2)
     
     def distancia_entre_puntos(self, x1, y1, x2, y2):
         return round(math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2), 2)
@@ -71,14 +71,12 @@ class Geometria:
         return (y2 - y1) / (x2 - x1)
     
     def ecuacion_recta(self, x1, y1, x2, y2):
-        if x1 == x2:
-            raise ValueError("No se puede calcular la ecuación de una línea vertical de la forma x = c")
         m = (y2 - y1) / (x2 - x1)
         b = y1 - m * x1
-        return (round(m, 2), -1, round(b, 2))
+        return (round(m, 2), round(-1, 2), round(b, 2))
     
-    def area_poligono_regular(self, n, s, a):
-        return (n * s * a) / 2
+    def area_poligono_regular(self, lados, longitud, apotema):
+        return (lados * longitud * apotema) / 2
     
     def perimetro_poligono_regular(self, num_lados, lado):
         return num_lados * lado
