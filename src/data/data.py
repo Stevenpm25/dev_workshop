@@ -47,21 +47,22 @@ class Data:
      def __init__(self):
         self.items = []
 
-    def is_empty(self): 
+     def is_empty(self):  # <--- Agregar este método si no está
         return len(self.items) == 0
 
-    def push(self, item):
+     def push(self, item):
         self.items.append(item)
 
-    def pop(self):
+     def pop(self):
         if not self.is_empty():
             return self.items.pop()
         return None
 
-    def peek(self):  # <--- Agregado
+     def peek(self):
         if not self.is_empty():
             return self.items[-1]
         return None
+
 
 
     class Cola:
