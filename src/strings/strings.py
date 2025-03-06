@@ -27,9 +27,10 @@ class Strings:
         """
         return sum(1 for char in texto.lower() if char in "aeiou")
 
-    def contar_consonantes(texto):
+    def contar_consonantes(self, texto):
      consonantes = "bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ"
-     return sum(1 for c in texto if c in consonantes and c.lower() != 'y')
+     return sum(1 for c in texto if c in consonantes)
+
 
     def es_anagrama(self, texto1, texto2):
         """
